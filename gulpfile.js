@@ -277,15 +277,16 @@ function startBrowserSync() {
 }
 
 function startTests(singleRun, done) {
-    var karma = require('karma').server;
+    var Server = require('karma').Server;
     var excludeFiles = [];
     var serverSpecs = config.serverIntegrationSpecs;
 
-    karma.start({
+    var server = new Server({
         configFile: __dirname + '/karma.conf.js',
         exclude: excludeFiles,
         singleRun: !!singleRun
     }, karmaCompleted);
+    server.start();
 
     function karmaCompleted(karmaResult) {
         log('Karma completed!');
