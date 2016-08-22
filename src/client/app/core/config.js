@@ -13,21 +13,20 @@
     }
 
     var config = {
-        appErrorPrefix: '[GulpPatterns Error] ', //Configure the exceptionHandler decorator
-        appTitle: 'Gulp Patterns Demo',
+        appErrorPrefix: '[Auto Renter Error] ', //Configure the exceptionHandler decorator
+        appTitle: 'Auto Renter',
         imageBasePath: '/images/photos/',
-        unknownPersonImageSource: 'unknown_person.jpg'
+        unknownPersonImageSource: 'unknown_person.jpg',
+        apiUrl: 'http://localhost:20374'//'http://autorenterapi.azurewebsites.net'
     };
 
     core.value('config', config);
 
     core.config(configure);
 
-    configure.$inject = ['$compileProvider', '$logProvider',
-                         'routerHelperProvider', 'exceptionHandlerProvider'];
+    configure.$inject = ['$compileProvider', '$logProvider', 'routerHelperProvider', 'exceptionHandlerProvider'];
     /* @ngInject */
-    function configure ($compileProvider, $logProvider,
-                         routerHelperProvider, exceptionHandlerProvider) {
+    function configure ($compileProvider, $logProvider, routerHelperProvider, exceptionHandlerProvider) {
         $compileProvider.debugInfoEnabled(false);
 
         // turn debugging off/on (no info or warn)
@@ -51,7 +50,7 @@
             }
 
             routerHelperProvider.configure({
-                docTitle: 'Gulp: ',
+                docTitle: 'Auto Renter: ',
                 resolveAlways: resolveAlways
             });
         }

@@ -10,6 +10,8 @@
         /* Feature areas */
         'app.customers',
         'app.dashboard',
+        'app.login',
+        'app.error',
         'app.layout'
     ]);
 
