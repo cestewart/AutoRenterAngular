@@ -5,8 +5,9 @@
         .module('app.layout')
         .directive('htTopNav', htTopNav);
 
-    /* @ngInject */
-    function htTopNav () {
+    htTopNav.$inject = ['$state', '$localStorage'];
+
+    function htTopNav ($state, $localStorage) {
         var directive = {
             bindToController: true,
             controller: TopNavController,
@@ -19,9 +20,17 @@
             templateUrl: 'app/layout/ht-top-nav.html'
         };
 
-        /* @ngInject */
-        function TopNavController() {
+        function TopNavController($state, $localStorage) {
             var vm = this;
+            if ($localStorage.User) {
+                vm.showLogout = true;
+            }
+
+            vm.logout = function() {
+                vm.showLogout = false;
+                $localStorage.User = undefined;
+                $state.go('login');
+            };
         }
 
         return directive;

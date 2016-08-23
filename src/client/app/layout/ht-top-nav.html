@@ -5,4 +5,7 @@
     <div class="navbar-header">
         <a href="/" class="navbar-brand"><span class="brand-title">{{vm.title}}</span></a>
     </div>
+    <div class="navbar-header">
+        <a href ng-click="vm.logout();" class="navbar-brand" ng-show="vm.showLogout">Logout</a>
+    </div>
 </nav>

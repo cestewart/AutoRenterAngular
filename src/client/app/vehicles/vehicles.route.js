@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.error')
+        .module('app.vehicles')
         .run(appRun);
 
     appRun.$inject = ['routerHelper'];
@@ -14,13 +14,13 @@
     function getStates() {
         return [
             {
-                state: 'error',
+                state: 'vehicles',
                 config: {
-                    url: '/:message',
-                    templateUrl: 'app/error/error.html',
-                    controller: 'Error',
+                    url: '/vehicles',
+                    templateUrl: 'app/vehicles/vehicles.html',
+                    controller: 'Vehicles',
                     controllerAs: 'vm',
-                    title: 'error'
+                    title: 'vehicles'
                 }
             }
         ];

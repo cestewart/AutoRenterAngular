@@ -5,8 +5,8 @@
         .module('app.login')
         .controller('Login', Login);
 
-    Login.$inject = ['$state', 'logger', 'loginService'];
-    function Login($state, logger, loginService) {
+    Login.$inject = ['$state', 'logger', '$localStorage', 'loginService'];
+    function Login($state, logger, $localStorage, loginService) {
         var vm = this;
         vm.title = 'Login';
         vm.errorMode = true;
@@ -20,7 +20,8 @@
         function onLoginUserComplete(result) {
             if (result.data.Success)
             {
-                $state.go('error', {message: 'Login succeeded'});
+                $localStorage.User = result.data.Data;
+                $state.go('home');
             }
             vm.error = result.data.Message;
         }

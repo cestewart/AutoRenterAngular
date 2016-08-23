@@ -17,7 +17,7 @@
         appTitle: 'Auto Renter',
         imageBasePath: '/images/photos/',
         unknownPersonImageSource: 'unknown_person.jpg',
-        apiUrl: 'http://localhost:20374'//'http://autorenterapi.azurewebsites.net'
+        apiUrl: 'http://localhost:20374' //http://autorenterapi.azurewebsites.net'
     };
 
     core.value('config', config);
