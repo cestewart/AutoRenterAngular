@@ -23,7 +23,7 @@
         function TopNavController($state, $localStorage) {
             var vm = this;
             if ($localStorage.User) {
-                vm.showLogout = true;
+                vm.userIsLoggedIn = true;
             }
 
             vm.logout = function() {

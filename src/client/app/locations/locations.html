@@ -1,0 +1,35 @@
+<section class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <div class="row col-md-8 col-md-offset-2">
+                <div class="widget wblue">
+                    <div ht-widget-header title="{{vm.title}}"></div>
+                </div>
+                <div class="widget-content">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Site Id</th>
+                            <th>Name</th>
+                            <th>Vehicles</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="location in vm.locations">
+                            <td><a href="/locationDetail?id={{location.LocationId}}">{{location.SiteId}}</a></td>
+                            <td>{{location.Name}}</td>
+                            <td>{{location.VehicleCount}}</td>
+                            <td>{{location.City}}</td>
+                            <td>{{location.State}}</td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                 </div>
+            </div>
+        </div>
+    </section>
+</section>

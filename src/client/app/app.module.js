@@ -13,6 +13,7 @@
         'app.dashboard',
         'app.login',
         'app.home',
+        'app.locations',
         'app.vehicles',
         'app.error',
         'app.layout'
